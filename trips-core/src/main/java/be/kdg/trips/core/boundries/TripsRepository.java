@@ -15,4 +15,6 @@ public interface TripsRepository {
     Trip addLocationToTrip(Trip trip, Location location, int index);
     Trip addLocationToTrip(Trip trip, Location location);
     Trip removeLocationToTrip(Trip trip, Location location);
+
+    boolean deleteTrip(Trip t);
 }

@@ -26,7 +26,7 @@ public class InMemoryTripsRepo implements TripsRepository {
 
     @Override
     public Trip loadTripByName(String name) {
-        Optional<Trip> tripOptional = trips.stream().filter(t -> t.getNaam().equals(name)).findFirst();
+        Optional<Trip> tripOptional = trips.stream().filter(t -> t.getName().equals(name)).findFirst();
         if (!tripOptional.isPresent()) throw new NotFoundException("trip not found with name " + name);
         return tripOptional.orElse(null);
     }
@@ -73,5 +73,10 @@ public class InMemoryTripsRepo implements TripsRepository {
         Trip t = getTrip(trip);
         t.removeLocation(location);
         return t;
+    }
+
+    @Override
+    public boolean deleteTrip(Trip t) {
+       return trips.remove(t);
     }
 }
