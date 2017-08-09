@@ -6,7 +6,11 @@
 	<groupId>be.kdg</groupId>
 	<artifactId>trips</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
-	<packaging>jar</packaging>
+    <modules>
+        <module>core</module>
+		<module>trips-repository</module>
+	</modules>
+    <packaging>pom</packaging>
 
 	<name>trips</name>
 	<description>Demo project for Spring Boot</description>
