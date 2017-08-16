@@ -25,4 +25,13 @@ public class Location {
     public void setLongtitude(double longtitude) {
         this.longtitude = longtitude;
     }
+
+    @Override
+    public String toString() {
+        return "Location{" +
+                 + longtitude +
+                ","
+                + latitude +
+                '}';
+    }
 }

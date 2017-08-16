@@ -1,6 +1,6 @@
 package be.kdg.trips.repo;
 
-import be.kdg.trips.core.boundries.TripsRepository;
+import be.kdg.trips.core.boundries.TripRepository;
 import be.kdg.trips.core.entities.Label;
 import be.kdg.trips.core.entities.Location;
 import be.kdg.trips.core.entities.Trip;
@@ -10,10 +10,10 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;
 
-public class InMemoryTripsRepo implements TripsRepository {
+public class InMemoryTripRepo implements TripRepository {
     List<Trip> trips;
 
-    public InMemoryTripsRepo() {
+    public InMemoryTripRepo() {
         this.trips = new ArrayList<>();
     }
 

@@ -6,7 +6,7 @@ import be.kdg.trips.core.entities.Trip;
 
 import java.util.List;
 
-public interface TripsRepository {
+public interface TripRepository {
     Trip saveTrip(Trip trip);
 
     Trip loadTripByName(String name);
