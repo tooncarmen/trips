@@ -1,6 +1,6 @@
 package be.kdg.trips.repo;
 
-import be.kdg.trips.core.boundries.TripsRepository;
+import be.kdg.trips.core.boundries.TripRepository;
 import be.kdg.trips.core.entities.Label;
 import be.kdg.trips.core.entities.Location;
 import be.kdg.trips.core.entities.Trip;
@@ -10,10 +10,10 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;
 
-public class InMemoryTripsRepo implements TripsRepository {
+public class InMemoryTripRepo implements TripRepository {
     List<Trip> trips;
 
-    public InMemoryTripsRepo() {
+    public InMemoryTripRepo() {
         this.trips = new ArrayList<>();
     }
 
@@ -26,7 +26,7 @@ public class InMemoryTripsRepo implements TripsRepository {
 
     @Override
     public Trip loadTripByName(String name) {
-        Optional<Trip> tripOptional = trips.stream().filter(t -> t.getNaam().equals(name)).findFirst();
+        Optional<Trip> tripOptional = trips.stream().filter(t -> t.getName().equals(name)).findFirst();
         if (!tripOptional.isPresent()) throw new NotFoundException("trip not found with name " + name);
         return tripOptional.orElse(null);
     }
@@ -73,5 +73,10 @@ public class InMemoryTripsRepo implements TripsRepository {
         Trip t = getTrip(trip);
         t.removeLocation(location);
         return t;
+    }
+
+    @Override
+    public boolean deleteTrip(Trip t) {
+       return trips.remove(t);
     }
 }

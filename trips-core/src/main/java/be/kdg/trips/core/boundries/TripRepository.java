@@ -6,7 +6,7 @@ import be.kdg.trips.core.entities.Trip;
 
 import java.util.List;
 
-public interface TripsRepository {
+public interface TripRepository {
     Trip saveTrip(Trip trip);
 
     Trip loadTripByName(String name);
@@ -15,4 +15,6 @@ public interface TripsRepository {
     Trip addLocationToTrip(Trip trip, Location location, int index);
     Trip addLocationToTrip(Trip trip, Location location);
     Trip removeLocationToTrip(Trip trip, Location location);
+
+    boolean deleteTrip(Trip t);
 }

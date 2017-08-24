@@ -7,13 +7,14 @@
 	<artifactId>trips</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
     <modules>
-        <module>core</module>
+        <module>trips-core</module>
 		<module>trips-repository</module>
-	</modules>
+        <module>trips-invitationemailer</module>
+    </modules>
     <packaging>pom</packaging>
 
 	<name>trips</name>
-	<description>Demo project for Spring Boot</description>
+	<description>Trips - IP2 - 2e zit</description>
 
 	<parent>
 		<groupId>org.springframework.boot</groupId>

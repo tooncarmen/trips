@@ -2,10 +2,16 @@ package be.kdg.trips.repo;
 
 import be.kdg.trips.core.boundries.InvitationsRepository;
 import be.kdg.trips.core.entities.Invitation;
+import be.kdg.trips.core.entities.Label;
+import be.kdg.trips.core.entities.Trip;
 import be.kdg.trips.core.entities.User;
 import org.junit.Assert;
 import org.junit.Before;
 import org.junit.Test;
+
+import java.lang.reflect.Array;
+import java.time.LocalDateTime;
+import java.util.*;
 
 public class InvitationTest {
     InvitationsRepository invitationsRepository;
@@ -17,14 +23,13 @@ public class InvitationTest {
 
     @Test
     public void saveInvitation() throws Exception {
-        Invitation invitation = new Invitation();
-        User dirk = new User("Drik","dirk@mail.com","123");
-        User jan = new User("Jan","jan@mail.com","321");
-        invitation.setConfirmed(false);
-        invitation.setInviter(dirk);
-        invitation.setInvitee(jan);
+        User dirk = new User("Drik", "dirk@mail.com", "123");
+        String jan = "jan@mail.com";
+        List<Label> labels = Collections.singletonList(new Label("Adventure"));
+        Trip t = new Trip("off to somewhere", "Just a hike", labels);
+        Invitation invitation = new Invitation("jan", dirk, t, LocalDateTime.now());
 
         invitationsRepository.saveInvitation(invitation);
-        Assert.assertTrue("invitations should be saved correctly",invitationsRepository.loadInvitationsByUser(jan).contains(invitation));
+        Assert.assertTrue("invitations should be saved correctly", invitationsRepository.loadInvitationsByEmail(jan).contains(invitation));
     }
 }

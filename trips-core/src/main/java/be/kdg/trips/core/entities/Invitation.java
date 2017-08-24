@@ -1,13 +1,21 @@
 package be.kdg.trips.core.entities;
 
-import java.util.Date;
+import java.time.LocalDateTime;
 
 public class Invitation {
     private boolean confirmed;
-    private User invitee;
+    private String inviteeEmail;
     private User inviter;
     private Trip trip;
-    private Date date;
+    private LocalDateTime date;
+
+    public Invitation(String inviteeEmail, User inviter, Trip trip, LocalDateTime date) {
+        this.inviteeEmail = inviteeEmail;
+        this.inviter = inviter;
+        this.trip = trip;
+        this.date = date;
+        this.confirmed =false;
+    }
 
     public boolean isConfirmed() {
         return confirmed;
@@ -17,12 +25,12 @@ public class Invitation {
         this.confirmed = confirmed;
     }
 
-    public User getInvitee() {
-        return invitee;
+    public String getInviteeEmail() {
+        return inviteeEmail;
     }
 
-    public void setInvitee(User invitee) {
-        this.invitee = invitee;
+    public void setInviteeEmail(String inviteeEmail) {
+        this.inviteeEmail = inviteeEmail;
     }
 
     public User getInviter() {
@@ -41,11 +49,11 @@ public class Invitation {
         this.trip = trip;
     }
 
-    public Date getDate() {
+    public LocalDateTime getDate() {
         return date;
     }
 
-    public void setDate(Date date) {
+    public void setDate(LocalDateTime date) {
         this.date = date;
     }
 }

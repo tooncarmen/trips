@@ -1,29 +1,33 @@
 package be.kdg.trips.core.entities;
 
-import java.util.ArrayList;
 import java.util.List;
-import java.util.Map;
 
 public class Trip {
-    private String naam;
-    private String omschrijving;
+    private String name;
+    private String description;
     private List<Label> labels;
     private List<Location> locations;
 
-    public String getNaam() {
-        return naam;
+    public Trip(String naam, String description, List<Label> labels) {
+        this.name = naam;
+        this.description = description;
+        this.labels = labels;
     }
 
-    public void setNaam(String naam) {
-        this.naam = naam;
+    public String getName() {
+        return name;
     }
 
-    public String getOmschrijving() {
-        return omschrijving;
+    public void setName(String name) {
+        this.name = name;
     }
 
-    public void setOmschrijving(String omschrijving) {
-        this.omschrijving = omschrijving;
+    public String getDescription() {
+        return description;
+    }
+
+    public void setDescription(String description) {
+        this.description = description;
     }
 
     public List<Label> getLabels() {

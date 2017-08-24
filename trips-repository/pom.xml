@@ -16,6 +16,12 @@
         <groupId>be.kdg</groupId>
         <artifactId>trips-core</artifactId>
     </dependency>
+        <dependency>
+            <groupId>be.kdg</groupId>
+            <artifactId>core</artifactId>
+            <version>0.0.1-SNAPSHOT</version>
+        </dependency>
+
     </dependencies>
 
 </project>
