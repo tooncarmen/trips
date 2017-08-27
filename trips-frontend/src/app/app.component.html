@@ -1,3 +1,21 @@
-<h1>
-  {{title}}
-</h1>
+<md-sidenav-container >
+
+<md-toolbar class="md-tall bg-black white">
+  <button md-button (click)="sidenav.toggle()">Trips</button>
+  <span class="spacer"></span>
+  <button md-button (click)="ShowLoginDialog()">Login/Register</button>
+</md-toolbar>
+
+
+  <md-sidenav #sidenav mode="side">
+    <app-navigation></app-navigation>
+  </md-sidenav>
+
+  <div style="text-align:center; horiz-align: center">
+    <h1>
+      Welcome to your next adventure.
+    </h1>
+
+    <router-outlet></router-outlet>
+  </div>
+</md-sidenav-container>

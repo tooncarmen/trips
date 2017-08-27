@@ -1,11 +1,21 @@
 package be.kdg.tripsspringapp.dto;
 
 import be.kdg.trips.core.entities.User;
+import org.springframework.hateoas.ResourceSupport;
 
-public class UserDTO {
+public class UserDTO extends ResourceSupport {
     public String password;
     public String email;
     public String username;
+
+    public UserDTO() {
+    }
+
+    public UserDTO(String password, String email, String username) {
+        this.password = password;
+        this.email = email;
+        this.username = username;
+    }
 
     public UserDTO(User user) {
         this.username = user.getUsername();

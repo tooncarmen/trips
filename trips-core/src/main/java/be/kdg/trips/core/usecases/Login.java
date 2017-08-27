@@ -15,20 +15,34 @@ public class Login {
     }
 
     public User registerUser(User user) {
-        LOGGER.info("Register request for {}", user.getUsername());
-        if (userRepository.getUserByUsername(user.getUsername()).equals(null)) {
-            LOGGER.info("- Registered for {}", user.getUsername());
+        LOGGER.info("Register request for {}", user.getEmail());
+        if (userRepository.getUserByEmail(user.getEmail()) == null) {
+            LOGGER.info("- Registered for {}", user.getEmail());
             userRepository.register(user);
+        }else{
+            LOGGER.info("* Email {} is already taken", user.getEmail());
+            throw new RuntimeException("Email is already taken");
         }
         return user;
     }
-    public boolean check(String email, String passwd){
+
+    public boolean check(String email, String passwd) {
         LOGGER.info("Credentials check for email {}", email);
         User u = userRepository.getUserByEmail(email);
-        if(u.getPassword().equals(passwd)){
+        if (u.getPassword().equals(passwd)) {
             LOGGER.info("- Credentials check OK");
             return true;
         }
         return false;
+    }
+
+    public User getUserByEmail(String email) {
+        LOGGER.info("getting user by email {}", email);
+        return userRepository.getUserByEmail(email);
+    }
+
+    public User getUserById(int id) {
+        LOGGER.info("getting user by id {}", id);
+        return userRepository.getUserById(id);
     }
 }
