@@ -16,6 +16,7 @@ public class User {
     }
 
     public void setId(int id) {
+        if(this.id == 0)
         this.id = id;
     }
 

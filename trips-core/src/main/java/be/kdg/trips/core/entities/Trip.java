@@ -3,15 +3,26 @@ package be.kdg.trips.core.entities;
 import java.util.List;
 
 public class Trip {
+    private int id;
     private String name;
     private String description;
     private List<Tag> tags;
     private List<Location> locations;
 
-    public Trip(String naam, String description, List<Tag> tags) {
-        this.name = naam;
+    public Trip(String name, String description, List<Tag> tags, List<Location> locations) {
+        this.name = name;
         this.description = description;
         this.tags = tags;
+        this.locations = locations;
+    }
+
+    public void setId(int id) {
+        if (this.id == 0)
+            this.id = id;
+    }
+
+    public int getId() {
+        return id;
     }
 
     public String getName() {
@@ -39,15 +50,15 @@ public class Trip {
     }
 
 
-    public void addLocation(Location location){
+    public void addLocation(Location location) {
         locations.add(location);
     }
 
-    public void addLocation(int index , Location location){
-        locations.add(index,location);
+    public void addLocation(int index, Location location) {
+        locations.add(index, location);
     }
 
-    public void removeLocation(Location location){
+    public void removeLocation(Location location) {
         locations.remove(location);
     }
 }

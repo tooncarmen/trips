@@ -9,6 +9,7 @@ import java.util.List;
 public interface TripRepository {
     Trip saveTrip(Trip trip);
 
+    Trip loadTripById(int tripId);
     Trip loadTripByName(String name);
     List<Trip> loadTripsByLabels(Tag[] labels);
 
@@ -17,4 +18,5 @@ public interface TripRepository {
     Trip removeLocationToTrip(Trip trip, Location location);
 
     boolean deleteTrip(Trip t);
+
 }

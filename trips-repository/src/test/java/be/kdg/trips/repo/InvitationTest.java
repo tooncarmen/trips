@@ -25,7 +25,7 @@ public class InvitationTest {
         User dirk = new User("Drik", "dirk@mail.com", "123");
         String jan = "jan@mail.com";
         List<Tag> labels = Collections.singletonList(new Tag("Adventure"));
-        Trip t = new Trip("off to somewhere", "Just a hike", labels);
+        Trip t = new Trip("off to somewhere", "Just a hike", labels, new ArrayList<>());
         Invitation invitation = new Invitation("jan", dirk, t, LocalDateTime.now());
 
         invitationsRepository.saveInvitation(invitation);

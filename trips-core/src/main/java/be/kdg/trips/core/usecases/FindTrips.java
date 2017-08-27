@@ -18,6 +18,11 @@ public class FindTrips {
         this.tripRepository = tripRepository;
     }
 
+    public Trip findTripById(int tripId){
+        LOGGER.info("Find Trip By id '{0}'", tripId);
+        return tripRepository.loadTripById(tripId);
+    }
+
     public Trip findTripByName(String name){
         LOGGER.info("Find Trip By name '{0}'", name);
         return tripRepository.loadTripByName(name);

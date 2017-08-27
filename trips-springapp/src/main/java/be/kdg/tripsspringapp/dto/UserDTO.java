@@ -4,16 +4,34 @@ import be.kdg.trips.core.entities.User;
 import org.springframework.hateoas.ResourceSupport;
 
 public class UserDTO extends ResourceSupport {
-    public String password;
-    public String email;
-    public String username;
+    private int id;
+    private String password;
+    private String email;
+    private String username;
 
     public UserDTO() {
     }
 
-    public UserDTO(String password, String email, String username) {
+    public UserDTO(int id, String password, String email, String username) {
+        this.id = id;
         this.password = password;
         this.email = email;
+        this.username = username;
+    }
+
+    public void setId(int id) {
+        this.id = id;
+    }
+
+    public void setPassword(String password) {
+        this.password = password;
+    }
+
+    public void setEmail(String email) {
+        this.email = email;
+    }
+
+    public void setUsername(String username) {
         this.username = username;
     }
 

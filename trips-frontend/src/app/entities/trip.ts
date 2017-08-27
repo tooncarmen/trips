@@ -9,6 +9,7 @@ export interface Location{
   lng:number;
   question: string;
   label:string;
+  description:string;
 }
 export function createEmptyTrip():Trip{
  return {

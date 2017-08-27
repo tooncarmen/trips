@@ -4,6 +4,8 @@ import {NgModule} from '@angular/core';
 import {AppComponent} from './app.component';
 import {
   MdButtonModule, MdCardModule, MdChipsModule, MdDialogModule, MdIconModule, MdIconRegistry, MdInputModule, MdListModule, MdSidenavModule,
+  MdSnackBar,
+  MdSnackBarModule,
   MdTabsModule,
   MdToolbarModule, MdTooltipModule
 } from "@angular/material";
@@ -19,6 +21,7 @@ import {UserService} from "./services/user.service";
 import {HttpModule} from "@angular/http";
 import {FormsModule} from "@angular/forms";
 import { AgmCoreModule } from '@agm/core';
+import {TripService} from "./services/trip.service";
 
 @NgModule({
   declarations: [
@@ -50,9 +53,10 @@ import { AgmCoreModule } from '@agm/core';
     MdTabsModule,
     MdChipsModule,
     MdButtonModule,
-    MdTooltipModule
+    MdTooltipModule,
+    MdSnackBarModule
   ],
-  providers: [UserService, MdIconRegistry],
+  providers: [UserService,TripService, MdIconRegistry],
   bootstrap: [AppComponent, NavigationComponent],
   entryComponents: [LoginDialogComponent]
 })

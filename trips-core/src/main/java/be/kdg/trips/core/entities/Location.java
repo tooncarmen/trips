@@ -11,6 +11,14 @@ public class Location {
     private String question;
     private List<URL> images;
 
+    public Location(double latitude, double longtitude, String label, String description, String question) {
+        this.latitude = latitude;
+        this.longtitude = longtitude;
+        this.label = label;
+        this.description = description;
+        this.question = question;
+    }
+
     public String getLabel() {
         return label;
     }

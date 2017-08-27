@@ -32,6 +32,7 @@ public class InMemoryUserRepo implements UserRepository {
 
     @Override
     public User getUserByEmail(String email) {
+        System.out.println("Finding Email:" + email);
         Optional<User> found = users.stream().filter(u -> u.getEmail().equals(email)).findFirst();
         return found.orElse(null);
     }
