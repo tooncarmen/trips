@@ -1,7 +1,7 @@
 package be.kdg.trips.core.usecases;
 
 import be.kdg.trips.core.boundries.TripRepository;
-import be.kdg.trips.core.entities.Label;
+import be.kdg.trips.core.entities.Tag;
 import be.kdg.trips.core.entities.Trip;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -22,7 +22,7 @@ public class FindTrips {
         LOGGER.info("Find Trip By name '{0}'", name);
         return tripRepository.loadTripByName(name);
     }
-    public List<Trip> findTripsByLabel(Label[] labels){
+    public List<Trip> findTripsByLabel(Tag[] labels){
         LOGGER.info("Find Trip by labels {0}", Arrays.toString(labels));
         return tripRepository.loadTripsByLabels(labels);
     }

@@ -1,7 +1,7 @@
 package be.kdg.trips.core.usecases;
 
 import be.kdg.trips.core.boundries.TripRepository;
-import be.kdg.trips.core.entities.Label;
+import be.kdg.trips.core.entities.Tag;
 import be.kdg.trips.core.entities.Location;
 import be.kdg.trips.core.entities.Trip;
 import org.slf4j.Logger;
@@ -18,7 +18,7 @@ public class CreateTrip {
         this.tripRepository = tripRepository;
     }
 
-    public Trip create(String name, String desc, List<Label> labels){
+    public Trip create(String name, String desc, List<Tag> labels){
         LOGGER.info("Trip {0}: created", name);
         Trip t = new Trip(name,desc,labels);
         return tripRepository.saveTrip(t);

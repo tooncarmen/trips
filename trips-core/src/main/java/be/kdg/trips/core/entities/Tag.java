@@ -1,7 +1,7 @@
 package be.kdg.trips.core.entities;
 
-public class Label {
-    public Label(String tag) {
+public class Tag {
+    public Tag(String tag) {
         this.tag = tag;
     }
 

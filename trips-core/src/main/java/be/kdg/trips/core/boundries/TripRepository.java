@@ -1,6 +1,6 @@
 package be.kdg.trips.core.boundries;
 
-import be.kdg.trips.core.entities.Label;
+import be.kdg.trips.core.entities.Tag;
 import be.kdg.trips.core.entities.Location;
 import be.kdg.trips.core.entities.Trip;
 
@@ -10,7 +10,7 @@ public interface TripRepository {
     Trip saveTrip(Trip trip);
 
     Trip loadTripByName(String name);
-    List<Trip> loadTripsByLabels(Label[] labels);
+    List<Trip> loadTripsByLabels(Tag[] labels);
 
     Trip addLocationToTrip(Trip trip, Location location, int index);
     Trip addLocationToTrip(Trip trip, Location location);

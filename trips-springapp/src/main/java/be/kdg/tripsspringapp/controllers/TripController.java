@@ -1,7 +1,7 @@
 package be.kdg.tripsspringapp.controllers;
 
 
-import be.kdg.trips.core.entities.Label;
+import be.kdg.trips.core.entities.Tag;
 import be.kdg.trips.core.entities.Trip;
 import be.kdg.trips.core.usecases.CreateTrip;
 import be.kdg.trips.core.usecases.FindTrips;
@@ -36,7 +36,7 @@ public class TripController {
 
     @RequestMapping(method = RequestMethod.GET, value = "/bylabel/{tag}")
     public List<TripDTO> saveTrip(@PathVariable("tag") String tag) {
-        Label[] labels = {new Label(tag)};
+        Tag[] labels = {new Tag(tag)};
         List<TripDTO> tripDTOList = new ArrayList<>();
         findTrips.findTripsByLabel(labels).forEach(t -> tripDTOList.add(new TripDTO(t)));
         return tripDTOList;

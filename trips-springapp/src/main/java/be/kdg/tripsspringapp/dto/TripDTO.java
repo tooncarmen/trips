@@ -1,13 +1,13 @@
 package be.kdg.tripsspringapp.dto;
 
-import be.kdg.trips.core.entities.Label;
+import be.kdg.trips.core.entities.Tag;
 import be.kdg.trips.core.entities.Location;
 import be.kdg.trips.core.entities.Trip;
 
 import java.util.List;
 
 public class TripDTO {
-    private List<Label> labels;
+    private List<Tag> tags;
     private String description;
     private String naam;
     private List<Location> locations;
@@ -15,10 +15,10 @@ public class TripDTO {
     public TripDTO(Trip trip) {
         description = trip.getDescription();
         naam = trip.getName();
-        labels = trip.getLabels();
+        tags = trip.getTags();
     }
 
     public Trip toEntity() {
-        return new Trip(this.naam,this.description,this.labels);
+        return new Trip(this.naam,this.description,this.tags);
     }
 }

@@ -5,13 +5,13 @@ import java.util.List;
 public class Trip {
     private String name;
     private String description;
-    private List<Label> labels;
+    private List<Tag> tags;
     private List<Location> locations;
 
-    public Trip(String naam, String description, List<Label> labels) {
+    public Trip(String naam, String description, List<Tag> tags) {
         this.name = naam;
         this.description = description;
-        this.labels = labels;
+        this.tags = tags;
     }
 
     public String getName() {
@@ -30,12 +30,12 @@ public class Trip {
         this.description = description;
     }
 
-    public List<Label> getLabels() {
-        return labels;
+    public List<Tag> getTags() {
+        return tags;
     }
 
-    public void setLabels(List<Label> labels) {
-        this.labels = labels;
+    public void setTags(List<Tag> tags) {
+        this.tags = tags;
     }
 
 

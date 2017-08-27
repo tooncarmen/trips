@@ -1,7 +1,6 @@
 package be.kdg.trips.core.usecases;
 
 import be.kdg.trips.core.boundries.UserRepository;
-import be.kdg.trips.core.entities.Label;
 import be.kdg.trips.core.entities.User;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;

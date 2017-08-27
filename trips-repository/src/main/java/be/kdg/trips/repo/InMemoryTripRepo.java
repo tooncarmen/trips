@@ -1,7 +1,7 @@
 package be.kdg.trips.repo;
 
 import be.kdg.trips.core.boundries.TripRepository;
-import be.kdg.trips.core.entities.Label;
+import be.kdg.trips.core.entities.Tag;
 import be.kdg.trips.core.entities.Location;
 import be.kdg.trips.core.entities.Trip;
 import be.kdg.trips.core.exceptions.NotFoundException;
@@ -32,12 +32,12 @@ public class InMemoryTripRepo implements TripRepository {
     }
 
     @Override
-    public List<Trip> loadTripsByLabels(Label[] labels) {
+    public List<Trip> loadTripsByLabels(Tag[] labels) {
 
         List<Trip> foundtrips = new ArrayList<>();
         for (Trip trip : trips) {
-            for (Label label : labels) {
-                if (trip.getLabels().contains(label)) foundtrips.add(trip);
+            for (Tag label : labels) {
+                if (trip.getTags().contains(label)) foundtrips.add(trip);
             }
         }
         if(foundtrips.isEmpty()) throw new  NotFoundException("No trips found with given labels");
