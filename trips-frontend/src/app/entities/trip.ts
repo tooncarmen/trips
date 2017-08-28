@@ -1,8 +1,7 @@
 export interface Trip{
+  id:number;
   name: string;
   description: string;
-  tags:string[];
-  locations:Location[];
 }
 export interface Location{
   lat:number;
@@ -11,11 +10,11 @@ export interface Location{
   label:string;
   description:string;
 }
+
 export function createEmptyTrip():Trip{
  return {
+   id:0,
    name:"",
    description:"",
-   tags:[],
-   locations:[]
  }
 }

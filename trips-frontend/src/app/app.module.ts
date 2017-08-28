@@ -22,6 +22,7 @@ import {HttpModule} from "@angular/http";
 import {FormsModule} from "@angular/forms";
 import { AgmCoreModule } from '@agm/core';
 import {TripService} from "./services/trip.service";
+import { TripDetailComponent } from './trip-detail/trip-detail.component';
 
 @NgModule({
   declarations: [
@@ -31,7 +32,8 @@ import {TripService} from "./services/trip.service";
     NavigationComponent,
     HomeComponent,
     MakeTripsComponent,
-    ListTripsComponent
+    ListTripsComponent,
+    TripDetailComponent
   ],
   imports: [
     BrowserAnimationsModule,

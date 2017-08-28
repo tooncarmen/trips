@@ -19,16 +19,20 @@ public class FindTrips {
     }
 
     public Trip findTripById(int tripId){
-        LOGGER.info("Find Trip By id '{0}'", tripId);
+        LOGGER.info("Find Trip By id '{}'", tripId);
         return tripRepository.loadTripById(tripId);
     }
 
     public Trip findTripByName(String name){
-        LOGGER.info("Find Trip By name '{0}'", name);
+        LOGGER.info("Find Trip By name '{}'", name);
         return tripRepository.loadTripByName(name);
     }
     public List<Trip> findTripsByLabel(Tag[] labels){
-        LOGGER.info("Find Trip by labels {0}", Arrays.toString(labels));
+        LOGGER.info("Find Trip by labels {}", Arrays.toString(labels));
         return tripRepository.loadTripsByLabels(labels);
+    }
+
+    public List<Trip> findAllTrips() {
+        return tripRepository.loadAllTrips();
     }
 }

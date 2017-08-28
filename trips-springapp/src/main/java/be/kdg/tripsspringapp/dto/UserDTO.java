@@ -3,7 +3,7 @@ package be.kdg.tripsspringapp.dto;
 import be.kdg.trips.core.entities.User;
 import org.springframework.hateoas.ResourceSupport;
 
-public class UserDTO extends ResourceSupport {
+public class UserDTO {
     private int id;
     private String password;
     private String email;
@@ -43,5 +43,22 @@ public class UserDTO extends ResourceSupport {
 
     public User toEntity() {
         return new User(username, email, password);
+    }
+
+
+    public int getId() {
+        return id;
+    }
+
+    public String getPassword() {
+        return password;
+    }
+
+    public String getEmail() {
+        return email;
+    }
+
+    public String getUsername() {
+        return username;
     }
 }

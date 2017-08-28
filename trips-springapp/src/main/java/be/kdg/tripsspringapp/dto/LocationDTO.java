@@ -14,6 +14,23 @@ public class LocationDTO extends ResourceSupport {
     public LocationDTO() {
     }
 
+    public int getTripid() {
+        return tripid;
+    }
+
+    public void setTripid(int tripid) {
+        this.tripid = tripid;
+    }
+
+    public LocationDTO(Location location, int tripid){
+       this.tripid = tripid;
+        this.lat = (float) location.getLatitude();
+        this.lng = (float) location.getLongtitude();
+        this.question = location.getQuestion();
+        this.label = location.getLabel();
+        this.description = location.getDescription();
+    }
+
     public LocationDTO(int tripid, Float lat, Float lng, String question, String label, String description) {
         this.tripid = tripid;
         this.lat = lat;

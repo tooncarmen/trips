@@ -19,4 +19,5 @@ public interface TripRepository {
 
     boolean deleteTrip(Trip t);
 
+    List<Trip> loadAllTrips();
 }

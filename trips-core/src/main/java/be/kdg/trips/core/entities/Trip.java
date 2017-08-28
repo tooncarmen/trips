@@ -49,6 +49,9 @@ public class Trip {
         this.tags = tags;
     }
 
+    public List<Location> getLocations() {
+        return locations;
+    }
 
     public void addLocation(Location location) {
         locations.add(location);

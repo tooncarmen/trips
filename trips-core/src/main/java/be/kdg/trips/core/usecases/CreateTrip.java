@@ -20,18 +20,18 @@ public class CreateTrip {
     }
 
     public Trip create(String name, String desc, List<Tag> labels) {
-        LOGGER.info("Trip {0}: created", name);
+        LOGGER.info("Trip {}: created", name);
         Trip t = new Trip(name, desc, labels, new ArrayList<>());
         return tripRepository.saveTrip(t);
     }
 
     public Trip create(Trip t) {
-        LOGGER.info("Trip {0}: created", t.getName());
+        LOGGER.info("Trip {}: created", t.getName());
         return tripRepository.saveTrip(t);
     }
 
     public Trip addLocationsToTrip(Location[] locations, Trip trip) {
-        LOGGER.info("Trip {0}: locations added ({1})", trip.getName(), locations.length);
+        LOGGER.info("Trip {}: locations added ({})", trip.getName(), locations.length);
         for (Location location : locations) {
             tripRepository.addLocationToTrip(trip, location);
         }
@@ -39,23 +39,23 @@ public class CreateTrip {
     }
 
     public Trip addLocationToTrip(Location location, Trip trip) {
-        LOGGER.info("Trip {0}: location added {1}", trip.getName(), location.toString());
+        LOGGER.info("Trip {}: location added {1}", trip.getName(), location.toString());
         tripRepository.addLocationToTrip(trip, location);
         return trip;
     }
 
     public void addLocationToTripWithIndex(Location location, Trip trip, int index) {
-        LOGGER.info("Trip {0}: location added {1} with index {2}", trip.getName(), location.toString(), index);
+        LOGGER.info("Trip {}: location added {} with index {}", trip.getName(), location.toString(), index);
         tripRepository.addLocationToTrip(trip, location, index);
     }
 
     public void removeLocationFromTrip(Location location, Trip trip) {
-        LOGGER.info("Trip {0}: removed location", trip.getName(), location.toString());
+        LOGGER.info("Trip {}: removed location", trip.getName(), location.toString());
         tripRepository.removeLocationToTrip(trip, location);
     }
 
     public void removeTrip(Trip t) {
-        LOGGER.info("Trip {0}: removed", t.getName());
+        LOGGER.info("Trip {}: removed", t.getName());
         tripRepository.deleteTrip(t);
     }
 }
